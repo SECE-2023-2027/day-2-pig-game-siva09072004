@@ -11,7 +11,7 @@ let currentScore = 0;
 let scores = [0, 0];
 let gamePlaying = true;
 
-// 🎯 Centered Dice Container
+
 const diceContainer = document.createElement("div");
 diceContainer.classList.add("dice-container");
 
@@ -23,7 +23,7 @@ diceImage.style.objectFit = "contain";
 diceContainer.appendChild(diceImage);
 document.querySelector(".container").appendChild(diceContainer);
 
-// 🎲 Roll Dice
+
 rollBtn.addEventListener("click", () => {
     if (!gamePlaying) return;
 
@@ -42,12 +42,12 @@ rollBtn.addEventListener("click", () => {
     }
 });
 
-// 🧠 Switch Player Logic
+
 function switchPlayer() {
-    // Add currentScore to total
+
     scores[activePlayer - 1] += currentScore;
 
-    // Update UI
+ 
     if (activePlayer === 1) {
         score1El.textContent = scores[0];
         current1El.textContent = 0;
@@ -56,19 +56,19 @@ function switchPlayer() {
         current2El.textContent = 0;
     }
 
-    // 🏆 Check for winner
+ 
     if (scores[activePlayer - 1] >= 20) {
         alert(`🎉 Player ${activePlayer} Wins!`);
         gamePlaying = false;
         return;
     }
 
-    // Reset current and switch
+  
     currentScore = 0;
     activePlayer = activePlayer === 1 ? 2 : 1;
 }
 
-// 🔄 New Game
+
 newGameBtn.addEventListener("click", () => {
     scores = [0, 0];
     currentScore = 0;
