@@ -58,7 +58,7 @@ function switchPlayer() {
 
  
     if (scores[activePlayer - 1] >= 20) {
-        alert(`🎉 Player ${activePlayer} Wins!`);
+        alert(` Player ${activePlayer} Wins!`);
         gamePlaying = false;
         return;
     }
